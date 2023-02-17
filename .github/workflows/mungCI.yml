@@ -33,8 +33,11 @@ jobs:
       if: steps.filter.outputs.backend == 'true'
       uses: gradle/gradle-build-action@v2.3.3
 
-    - name: Execute Gradle build
+    - name: Make gradlew executable
       if: steps.filter.outputs.backend == 'true'
-      run: |
-        chmod +x ./gradlew
-        ./gradlew build
+      run: chmod +x ./gradlew
+      
+    - name: Test with Gradle
+      if: steps.filter.outputs.backend == 'true'
+      run: ./gradlew test
+
