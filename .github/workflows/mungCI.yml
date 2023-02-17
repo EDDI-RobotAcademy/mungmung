@@ -37,4 +37,4 @@ jobs:
       if: steps.filter.outputs.backend == 'true'
       run: |
         chmod +x ./gradlew
-        ./gradlew build
+        gradlew build
