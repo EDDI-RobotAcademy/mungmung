@@ -33,9 +33,9 @@ jobs:
       if: steps.filter.outputs.backend == 'true'
       uses: gradle/gradle-build-action@v2.3.3
 
-    - name: Make gradlew executable
+    - name: Execute Gradle build
       if: steps.filter.outputs.backend == 'true'
       run: |
-        chmod +x ./gradlew
-        ./gradlew build
+        chmod +x gradlew
+        gradlew build
         
